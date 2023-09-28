@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Own Your Home Cooperative Society</title>
+  <link rel="stylesheet" type="text/css" href="{%static 'css/main.css'%}">
+
+</head>
+<body>
+  <div>
+    {%if messages%}
+      {%for message in messages%}
+        <div class="alert alert-{{message.tags}}">
+          <strong> {{message}}</strong>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+  <header>
+    <nav>
+      <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/membership/">Membership</a></li>
+        <li><a href="/contact/">Contact Us</a></li>
+        <li><a href="/user/sign-up/">Register</a></li>
+        <li><a href="/user/sign-in/">Sign-in</a></li>
+        <li><a href="/user/sign-out/">Sign-out</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div class="container">
+          <h1>Welcome to Own Your Home Cooperative Society</h1>
+          <p>Empowering communities and fostering collaboration to own your home.</p>
+          <a href="/membership/" class="cta-button">Join Us</a>
+      </div>
+  </section>
+    <section>
+      <div>
+          </blockquote>
+          <p>&nbsp;</p>
+          <h1></h1>
+          <blockquote>
+          </blockquote>
+          <h1><strong>Vision</strong></h1>
+          <blockquote>
+          <p>sustainable social housing solutions for a better comfort.</p>
+          </blockquote>
+          <p>&nbsp;</p>
+          <h1><strong>Mission</strong></h1>
+          <blockquote>
+          <p>providing affordable, sustainable, safe and quality housing.</p>
+          </blockquote>
+          <p>&nbsp;</p>
+      </div>
+    </section>
+  <div>
+    <img src="static/img/img2.jpg" class="img-thumbnail" alt=""/>
+    <img src="static/img/img3.jpg" class="img-thumbnail" alt=""/>
+  </div>
+
+</main>
+<footer>
+    <p>&copy; 2023 Cooperative Society. All rights reserved.</p>
+</footer>
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

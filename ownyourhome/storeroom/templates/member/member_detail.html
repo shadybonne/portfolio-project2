@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Member Details for {{ member.fname }} {{ member.lname }}</h2>
+
+  <h3>Member Information</h3>
+  <ul>
+    <li><strong>First Name:</strong> {{ member.fname }}</li>
+    <li><strong>Last Name:</strong> {{ member.lname }}</li>
+    <li><strong>Date of Birth:</strong> {{ member.dob }}</li>
+    <li><strong>Email:</strong> {{ member.email }}</li>
+    <li><strong>Phone:</strong> {{ member.phone }}</li>
+    <li><strong>Occupation:</strong> {{ member.occupation }}</li>
+    <li><strong>Address:</strong> {{ member.address }}</li>
+    <li><strong>Next of Kin:</strong> {{ member.nok }}</li>
+  </ul>
+
+  <h3>Account Summary</h3>
+  <ul>
+    <li><strong>Account Balance:</strong> ${{ account_summary.account_balance }}</li>
+    <li><strong>Date Joined:</strong> {{ account_summary.date_joined }}</li>
+    <li><strong>Total Deposits:</strong> ${{ account_summary.total_deposits }}</li>
+    <li><strong>Total Withdrawals:</strong> ${{ account_summary.total_withdrawals }}</li>
+    <li><strong>Current Balance:</strong> ${{ account_summary.current_balance }}</li>
+  </ul>
+
+  <h3>Transactions</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Type</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for transaction in transactions %}
+        <tr>
+          <td>{{ transaction.transaction_date }}</td>
+          <td>{{ transaction.get_transaction_type_display }}</td>
+          <td>${{ transaction.amount }}</td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="3">No transactions found for this member.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <a href="#{% url 'transaction_create' member.id %}">Add Transaction</a>
+  <a href="#{% url 'financial_contributions' member.id %}">View Financial Contributions</a>
+  
+  <a href="#{% url 'member_list' %}">Back to Member List</a>
+{% endblock %}

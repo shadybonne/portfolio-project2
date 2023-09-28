@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <link rel="stylesheet" type="text/css" href="{%static 'css/membership.css'%}">
+<head>
+
+</head>
+<body>
+    <div>
+        <p>Own your Home cooperatives membership is open to all Nigerian individuals, organizations and cooperatives with verifiable source of income, record of consistent savings and ability to provide equity contributions towards acquiring desired properties including those in public and private employment, artisans, self employed and retirees.</p>
+        <p><strong>MEMBERSHIP TYPE</strong><br />
+        OYHC has the following classes of members:</p>
+        <p><strong>Individual Member</strong> &#8211; Persons in public, private and self employment seeking to own homes</p>
+        <p><strong>Corporate Member&nbsp;</strong>&#8211; Groups, associations and entities aiming to provide homes for their members. Such groups include, but not limited to, staff associations and cooperatives, business cooperatives, religious and community affiliated bodies and similar entities.</p>
+        <p><strong>Partners</strong> &#8211; Entities seeking to collaborate and invest in social housing. They include mortgage and commercial banks, housing off-takers, development institutions.</p>
+        <p><strong>MEMBERSHIP ELIGIBILITY</strong></p>
+        <p>To be eligible as a member of OYHC, the following applies:</p>
+        <p><strong>Individual Member</strong> &#8211; Must be 18 years and above and have a source of income that can be verified.</p>
+        <p><strong>Corporate Member</strong> &#8211; Duly registered with the appropriate authority in Nigeria</p>
+        <p><strong>Partners</strong> &#8211; Registration with appropriate authorities and evidence of involvement in social housing</p>
+        <p>&nbsp;</p>
+        <p><strong>MEMBERSHIP REGISTRATION</strong></p>
+        <p>To register as a member of OYHC:</p>
+        <p>Complete and submit a membership form&nbsp;</p>
+        <p>Pay a registration fee of N5,000 for individual members and N10,000 for corporate members and partners.</p>
+        <p><strong>ANNUAL MEMBERSHIP FEE</strong></p>
+        <p>After registration and receipt of membership number, members will be required to pay full membership fees and dues as follows:</p>
+        <p>-Individual membership fee &#8211; N10,000</p>
+        <p>-Corporate Partners Membership Fee &#8211; N20,000</p>
+        <p><strong>BENEFITS &amp; OPPORTUNITIES</strong></p>
+        <p>OYHC members enjoy a number of benefits including:</p>
+        <ul>
+        <li>Affordable housing in good locations</li>
+        <li>Genuine ownership and property titles</li>
+        <li>Single digit interest rate</li>
+        <li>Flexible acquisition plans</li>
+        <li>Discounts from participating property developers
+        <p><strong>REGISTRATION FORM</strong></li>
+    </div>
+
+    <form action="/membership/" method="POST">
+        {% csrf_token %}
+
+        <label for="name">First Name:</label>
+        <input type="text" id="fname" name="fname" required><br><br>
+
+        <label for="name">Last Name:</label>
+        <input type="text" id="lname" name="lname" required><br><br>
+
+        <label for="name">Middle Name:</label>
+        <input type="text" id="mname" name="mname"><br><br>
+
+        <label for="name">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="name">Occupation:</label>
+        <input type="text" id="occupation" name="occupation" required><br><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea><br><br>
+
+        <label for="name">Next of Kin:</label>
+        <input type="text" id="name" name="nok" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
